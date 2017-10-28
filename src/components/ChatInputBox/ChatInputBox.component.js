@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { inputChange, sendMessage } from '../redux/actions/message.actions';
+import { inputChange, addMessage } from '../redux/actions/message.actions';
 
 const ChatInputBox = ({textInput, onTextInputChange, onEnterMessage}) => (
   <div className='chat-input'>
@@ -27,7 +27,7 @@ const mapStateToProps = (state) => ({
 
 const actions = {
   onTextInputChange: inputChange,
-  onEnterMessage: sendMessage,
+  onEnterMessage: addMessage,
 }
 
 export default connect(mapStateToProps, actions)(ChatInputBox);

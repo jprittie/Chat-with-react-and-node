@@ -3,7 +3,7 @@ import combineReducers from 'redux/es/combineReducers';
 import { messages } from './message.reducer';
 
 export default combineReducers({
-  messages: messages,
+  messages: messages
   // recipe: recipeReducer,
   // routing: routerReducer,
   // searchParameters: searchParameters,

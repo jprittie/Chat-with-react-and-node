@@ -1,19 +1,20 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { inputChange, addMessage } from '../redux/actions/message.actions';
+import { inputChange, addMessage } from '../../redux/actions/message.actions';
 
 const ChatInputBox = ({textInput, onTextInputChange, onEnterMessage}) => (
   <div className='chat-input'>
     <textarea
-      name='message'
-      placeholder='Enter a message'
+
+      className="input"
+      placeholder="Enter a message"
       value={textInput}
       onChange={ev => onTextInputChange(ev.target.value)}
     />
 
     <button
       className="submit-button"
-      onClick={ () => onEnterMessage(textInput)}
+      onClick={ () => onEnterMessage(textInput) }
     >
       Enter
     </button>
@@ -22,7 +23,7 @@ const ChatInputBox = ({textInput, onTextInputChange, onEnterMessage}) => (
 );
 
 const mapStateToProps = (state) => ({
-  textInput: state.textInput,
+  textInput: state.messages.textInput,
 })
 
 const actions = {

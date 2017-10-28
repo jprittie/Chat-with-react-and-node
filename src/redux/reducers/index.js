@@ -1,22 +1,15 @@
 import combineReducers from 'redux/es/combineReducers';
 //import { routerReducer } from 'react-router-redux';
 import { messages, servertest, textInput } from './message.reducer';
-import { newuserjoined, currentUsers } from './userid.reducer';
+import { currentUsers } from './userid.reducer';
 
 export default combineReducers({
   messages: messages,
   servertest: servertest,
   textInput: textInput,
-  newuserjoined: newuserjoined,
+  // newuserjoined: newuserjoined,
   currentUsers: currentUsers,
-  myUserId: myUserId
-  // recipe: recipeReducer,
-  // routing: routerReducer,
-  // searchParameters: searchParameters,
-  // selectedRecipe: selectedRecipe,
-  // loadingState: loadingState,
-  // savedRecipes: savedRecipes,
-
+  // myUserId: myUserId
 });
 
 //I should user redux-watch to look for changes in new userjoined, so that I can display briefly that the user has joined the chat.

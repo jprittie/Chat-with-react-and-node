@@ -1,7 +1,7 @@
 //This should start a socket connection when store is created
 
-import { MESSAGE_ACTIONS} from '../actions/message.actions';
-//import * as actions from '../actions/message.actions';
+//import { MESSAGE_ACTIONS} from '../actions/message.actions';
+import * as actions from '../actions/message.actions';
 import socketIOClient from "socket.io-client";
 
 const socket = null;
@@ -15,7 +15,7 @@ export const startChat = (store) => {
   //Does this have to be in startChat? It would be tidier outside
   socket.on("new message", message => {
     //store.dispatch(actions.addMessage(message));
-    store.dispatch(MESSAGE_ACTIONS.ADD_MESSAGE(message));
+    store.dispatch(actions.addMessage(message));
   });
 
   // if (action.type === actions.addMessage ) {
@@ -26,16 +26,17 @@ export const startChat = (store) => {
 }
 
 // middleware to send data to server
-export function chatMiddleware(store) {
-  return next => action => {
-    const result = next(action);
-
-    if (socket && action.type === MESSAGE_ACTIONS.ADD_MESSAGE) {
-      let messages = store.getState().messages.messageLog;
-      //why not just emit action.payload?
-      socket.emit("new message", messages[messages.length -1]);
-    }
-
-    return result;
-  };
-}
+// I don't like this middleware
+// export function chatMiddleware(store) {
+//   return next => action => {
+//     const result = next(action);
+//
+//     if (socket && action.type === MESSAGE_ACTIONS.ADD_MESSAGE) {
+//       let messages = store.getState().messages.messageLog;
+//       //why not just emit action.payload?
+//       socket.emit("new message", messages[messages.length -1]);
+//     }
+//
+//     return result;
+//   };
+// }

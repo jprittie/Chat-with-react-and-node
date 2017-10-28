@@ -1,9 +1,10 @@
 import combineReducers from 'redux/es/combineReducers';
 //import { routerReducer } from 'react-router-redux';
-import { messages } from './message.reducer';
+import { messages, servertest } from './message.reducer';
 
 export default combineReducers({
-  messages: messages
+  messages: messages,
+  servertest: servertest
   // recipe: recipeReducer,
   // routing: routerReducer,
   // searchParameters: searchParameters,

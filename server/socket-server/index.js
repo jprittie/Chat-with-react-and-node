@@ -13,16 +13,25 @@ server.listen(port, function() {
 });
 
 io.on("connection", socket => {
-  console.log("New client connected");
-  socket.on("disconnect", () => console.log("Client disconnected"));
+  console.log("New client connected: " + socket.id);
+  socket.on("disconnect", () => console.log("Client with " + socket.id + " disconnected"));
+
+  //This is testing the redux-socket.io middleware
+  socket.on('action', (action) => {
+     if(action.type === 'server/hello'){
+       console.log('Got hello data!', action.data);
+       socket.emit('action', {type:'message', data:'good day!'});
+     }
+   });
 
   // when the client emits 'new message', this listens and executes
-  socket.on("new message", function(data) {
-    // we tell the client to execute 'new message'
-    console.log("new message received by server");
-    socket.broadcast.emit("new message", {
-      //username: socket.username,
-      message: data
-    });
-  });
+  // socket.on("new message", function(data) {
+  //   // we tell the client to execute 'new message'
+  //   console.log("new message received by server");
+  //   socket.broadcast.emit("new message", {
+  //     //username: socket.username,
+  //     message: data
+  //   });
+  // });
+
 });

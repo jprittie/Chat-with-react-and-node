@@ -5,23 +5,15 @@ const DEFAULT_STATE = {
   messageLog: []
 };
 
-//rewrite as switch case
-// export const messages = (state = DEFAULT_STATE, action) => {
-//   if(action.type === MESSAGE_ACTIONS.INPUT_CHANGE) {
-//     return {
-//       ...state,
-//       textInput: action.payload };
-//   }
-//   if(action.type === MESSAGE_ACTIONS.ADD_MESSAGE) {
-//     return {
-//       ...state,
-//       messageLog: [...state.messageLog, ...action.payload]
-//
-//     };
-//   }
-//   return state;
-// };
-
+// This reducer tests redux-socket.io middleware
+export const servertest = (state = {}, action) => {
+  switch(action.type){
+    case 'message':
+      return Object.assign({}, {message:action.data});
+    default:
+      return state;
+  }
+}
 
 
 export const messages = (state = DEFAULT_STATE, action) => {
@@ -60,3 +52,21 @@ export const messages = (state = DEFAULT_STATE, action) => {
 //   }
 //   return state;
 // }
+
+
+//rewrite as switch case
+// export const messages = (state = DEFAULT_STATE, action) => {
+//   if(action.type === MESSAGE_ACTIONS.INPUT_CHANGE) {
+//     return {
+//       ...state,
+//       textInput: action.payload };
+//   }
+//   if(action.type === MESSAGE_ACTIONS.ADD_MESSAGE) {
+//     return {
+//       ...state,
+//       messageLog: [...state.messageLog, ...action.payload]
+//
+//     };
+//   }
+//   return state;
+// };

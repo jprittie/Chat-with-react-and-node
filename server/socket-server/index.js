@@ -22,6 +22,11 @@ io.on("connection", socket => {
        console.log('Got hello data!', action.data);
        socket.emit('action', {type:'message', data:'good day!'});
      }
+
+     if(action.type === 'server/message'){
+       console.log('Got new message from client!', action.data);
+       socket.emit('action', {type:'message', data:action.data});
+     }
    });
 
   // when the client emits 'new message', this listens and executes

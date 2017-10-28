@@ -23,7 +23,7 @@ const ChatInputBox = ({textInput, onTextInputChange, onEnterMessage}) => (
 );
 
 const mapStateToProps = (state) => ({
-  textInput: state.messages.textInput,
+  textInput: state.textInput,
 })
 
 const actions = {

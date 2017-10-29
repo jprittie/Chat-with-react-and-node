@@ -3,9 +3,10 @@ import React from "react";
 
 const ChatMessage = ({message}) => (
   <div>
-    {message.message}
-    {message.userid}
+    <p>{message.userId} wrote:</p>
+    <p>{message.message}</p>
+
   </div>
 );
 
-export default ChatLog;
+export default ChatMessage;

@@ -33,19 +33,21 @@ io.on("connection", socket => {
        console.log('A new user has joined the chat: ', action.data);
        currentUsers = currentUsers.concat(action.data);
        console.log(currentUsers);
-       //Send new user the current users and message history
-       //But, what I actually want to do is send everyone currentUsers
-       //and only send the message history to new users
-       socket.emit('action', {type:'userjoined', data: currentUsers});
+       //Send updated currentUsers to all clients
+       io.sockets.emit('action', {type:'userjoined', data: currentUsers});
+       //Send message history only to the new client
        socket.emit('action', {type:'messages', data: messages});
      }
 
      if(action.type === 'server/message'){
        console.log('Got new message from a client!', action.data);
-       //messages is an array of objects
-       messages = messages.concat(action.data);
-       //messages = Object.assign({}, messages, action.data)
-       socket.emit('action', {type:'messages', data: messages});
+       //Reshape data
+       const newMessage = {
+         message: action.data.textInput,
+         userId: action.data.myUserId
+       }
+       messages = messages.concat(newMessage);
+       io.sockets.emit('action', {type:'messages', data: messages});
      }
 
    });

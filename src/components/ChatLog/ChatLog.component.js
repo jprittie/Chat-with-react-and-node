@@ -1,9 +1,10 @@
 import React from "react";
 import ChatMessage from '../ChatMessage/ChatMessage.component.js'
 
-const ChatLog = ({messages, currentUsers}) => (
+const ChatLog = ({messages}) => (
+
   <div>
-    messages.map(message => <ChatMessage props={message} />)
+    {messages.map((message, index) => <ChatMessage key={index} message={message} />)}
   </div>
 );
 

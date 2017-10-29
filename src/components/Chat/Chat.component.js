@@ -2,9 +2,9 @@ import React from 'react';
 import ChatLog from '../ChatLog/ChatLog.component.js'
 import ChatInputBox from '../ChatInputBox/ChatInputBox.component.js'
 
-const Chat = () => (
+const Chat = ({messages, currentUsers}) => (
   <div>
-    <ChatLog />
+    <ChatLog messages={messages}/>
     <ChatInputBox />
   </div>
 );

@@ -17,6 +17,8 @@ export const currentUsers = (state = [], action) => {
   switch (action.type) {
     case 'userjoined':
       return action.data;
+    case 'userleft':
+      return action.data;
     default:
       return state;
   }

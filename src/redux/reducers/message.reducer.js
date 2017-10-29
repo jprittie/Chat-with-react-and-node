@@ -57,8 +57,8 @@ export const textInput = (state = '', action) => {
 export const messages = (state = [], action) => {
   switch (action.type) {
     // case 'ADD_MESSAGE':
-    case 'message':
-      return [...state, action.data];
+    case 'messages':
+      return action.data;
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import combineReducers from 'redux/es/combineReducers';
 //import { routerReducer } from 'react-router-redux';
 import { messages, servertest, textInput } from './message.reducer';
-import { currentUsers } from './userid.reducer';
+import { currentUsers, myUserId } from './userid.reducer';
 
 export default combineReducers({
   messages: messages,
@@ -9,7 +9,7 @@ export default combineReducers({
   textInput: textInput,
   // newuserjoined: newuserjoined,
   currentUsers: currentUsers,
-  // myUserId: myUserId
+  myUserId: myUserId
 });
 
 //I should user redux-watch to look for changes in new userjoined, so that I can display briefly that the user has joined the chat.

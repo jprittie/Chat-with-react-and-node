@@ -1,42 +1,54 @@
-// Setup basic express server
+// Set up basic express server
 const express = require("express");
 const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 const port = process.env.PORT || 4001;
 
-//const app - express.createServer();
-//const io = require('socket.io').listen(app);
-
 server.listen(port, function() {
   console.log("Server listening at port %d", port);
 });
 
+var currentUsers = [];
+var messages = [];
+
 io.on("connection", socket => {
   console.log("New client connected: " + socket.id);
-  socket.on("disconnect", () => console.log("Client with " + socket.id + " disconnected"));
+  socket.on("disconnect", () => {
+    console.log("Client with " + socket.id + " disconnected");
+    //How can I get the userid of the socket?
+    //I need to remove user from currentUsers
+    //I could create an array of corresponding socket ids and user ids
+  });
 
-  //This is testing the redux-socket.io middleware
   socket.on('action', (action) => {
-     if(action.type === 'server/hello'){
-       console.log('Got hello data!', action.data);
-       socket.emit('action', {type:'message', data:'good day!'});
+    //This is testing the redux-socket.io middleware
+    //  if(action.type === 'server/hello'){
+    //    console.log('Got hello data!', action.data);
+    //    socket.broadcast.emit('action', {type:'message', data:'good day!'});
+    //  }
+
+
+     if(action.type === 'server/userid'){
+       console.log('A new user has joined the chat: ', action.data);
+       currentUsers = currentUsers.concat(action.data);
+       console.log(currentUsers);
+       //Send new user the current users and message history
+       //But, what I actually want to do is send everyone currentUsers
+       //and only send the message history to new users
+       socket.emit('action', {type:'userjoined', data: currentUsers});
+       socket.emit('action', {type:'messages', data: messages});
      }
 
      if(action.type === 'server/message'){
-       console.log('Got new message from client!', action.data);
-       socket.emit('action', {type:'message', data:action.data});
+       console.log('Got new message from a client!', action.data);
+       //messages is an array of objects
+       messages = messages.concat(action.data);
+       //messages = Object.assign({}, messages, action.data)
+       socket.emit('action', {type:'messages', data: messages});
      }
+
    });
 
-  // when the client emits 'new message', this listens and executes
-  // socket.on("new message", function(data) {
-  //   // we tell the client to execute 'new message'
-  //   console.log("new message received by server");
-  //   socket.broadcast.emit("new message", {
-  //     //username: socket.username,
-  //     message: data
-  //   });
-  // });
 
 });

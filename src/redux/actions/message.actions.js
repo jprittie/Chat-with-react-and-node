@@ -1,10 +1,6 @@
 export const MESSAGE_ACTIONS = {
   // user actions
   INPUT_CHANGE: 'INPUT_CHANGE',
-  //ADD_MESSAGE: 'ADD_MESSAGE',
-
-  // socket event actions
-  //RECEIVE_MESSAGE: 'RECEIVE_MESSAGE'
 }
 export const ADD_MESSAGE = 'server/message'
 
@@ -14,10 +10,9 @@ export const inputChange = value => ({
 });
 
 
-export const addMessage = chatMessage => ({
+export const addMessage = messageAndUserId => ({
   type: ADD_MESSAGE,
-  // data: "This is a new message",
-  data: chatMessage
+  data: messageAndUserId
 });
 
 // export const addMessage = message => ({

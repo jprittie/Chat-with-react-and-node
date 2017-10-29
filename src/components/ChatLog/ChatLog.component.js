@@ -1,9 +1,9 @@
 import React from "react";
-//import ChatMessage from '../ChatMessage/ChatMessage.component.js'
+import ChatMessage from '../ChatMessage/ChatMessage.component.js'
 
-const ChatLog = () => (
+const ChatLog = ({messages, currentUsers}) => (
   <div>
-    <p>The ChatLog component will go here.</p>
+    messages.map(message => <ChatMessage props={message} />)
   </div>
 );
 

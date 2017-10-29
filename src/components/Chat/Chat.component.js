@@ -5,8 +5,10 @@ import ChatInputBox from '../ChatInputBox/ChatInputBox.component.js'
 
 const Chat = ({messages, currentUsers}) => (
   <div>
-    <ChatUsers currentUsers={currentUsers} />
-    <ChatLog messages={messages} />
+    <div className="row">
+      <ChatUsers currentUsers={currentUsers} className="col s4" />
+      <ChatLog messages={messages} className="col s8" />
+    </div>
     <ChatInputBox />
   </div>
 );

@@ -6,10 +6,12 @@ import "./App.css";
 
 const App = ({messages, currentUsers, myUserId}) => (
   <div className="App">
-    <header className="App-header">
+    {/*}
+    <header className="App-header teal">
       <h1 className="App-title">Welcome to the Chatroom</h1>
       <h3>Your user ID is {myUserId}</h3>
     </header>
+    */}
     <Chat messages={messages} currentUsers={currentUsers} />
   </div>
 )

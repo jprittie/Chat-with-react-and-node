@@ -15,6 +15,8 @@ export const textInput = (state = '', action) => {
   switch (action.type) {
     case 'INPUT_CHANGE':
       return action.payload
+    case 'clearInput':
+      return action.payload
     default:
       return state;
   }

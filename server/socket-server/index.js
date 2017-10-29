@@ -48,6 +48,8 @@ io.on("connection", socket => {
        }
        messages = messages.concat(newMessage);
        io.sockets.emit('action', {type:'messages', data: messages});
+       //Send action to clear textInput on client that sent message
+       socket.emit('action', {type: 'clearInput', payload: ''});
      }
 
    });

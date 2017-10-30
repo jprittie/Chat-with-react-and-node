@@ -4,10 +4,10 @@ import './ChatUsers.css'
 const ChatUsers = ({currentUsers}) => {
   return (
 
-      <div className="online-user-list col s3 chat-users">
-        <div className="online-users-number valign-wrapper">
+      <div className="chat-users teal col s3">
+        <div className="chat-users-number valign-wrapper">
           <i className="mdi-social-people"></i>
-          <span className="valign">{ currentUsers.length } online</span>
+          <span className="valign user-number">{ currentUsers.length } online</span>
         </div>
 
 
@@ -15,7 +15,7 @@ const ChatUsers = ({currentUsers}) => {
           currentUsers.map(user => {
 
             return (
-              <li key={ user.socketId } className="valign-wrapper">
+              <li key={ user.socketId } className="valign-wrapper chat-user">
                 <img src={user.avatar} className="avatar" />
                 <span className="valign">User {user.userId}</span>
               </li>

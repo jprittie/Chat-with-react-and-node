@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { inputChange, addMessage } from '../../redux/actions/message.actions';
 
 const ChatInputBox = ({textInput, myUserInfo, onTextInputChange, onEnterMessage}) => (
-  <div className="chat-input teal">
-    <form className="container">
+  <div className="chat-input teal lighten-3">
+    <div className="container">
       <div className="row">
 
         <div className="input-field col s10">
@@ -32,7 +32,7 @@ const ChatInputBox = ({textInput, myUserInfo, onTextInputChange, onEnterMessage}
         </div>
 
     </div>
-  </form>
+  </div>
 </div>
 
 );

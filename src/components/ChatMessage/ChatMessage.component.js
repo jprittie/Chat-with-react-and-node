@@ -3,10 +3,12 @@ import './ChatMessage.css';
 
 
 const ChatMessage = ({message}) => (
-  <div className="row valign-wrapper">
+  <div className="row valign-wrapper chat-message">
     <img src={message.avatar} className="avatar"/>
-    <span className="valign userId">{message.userId}</span>
-    <span className="valign">{message.message}</span>
+    <div>
+    <p className="userId">{message.userId}</p>
+    <p className="">{message.message}</p>
+    </div>
   </div>
 );
 

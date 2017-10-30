@@ -9,9 +9,9 @@ server.listen(port, function() {
   console.log("Server listening at port %d", port);
 });
 
-const randomAvatar = require('./avatar.js');
-console.log("randomAvatar is " + randomAvatar);
-console.log(randomAvatar.randomShape);
+const makeNewAvatar = require('./avatar.js');
+// console.log("randomAvatar is " + randomAvatar);
+
 var currentUsers = [];
 var messages = [];
 
@@ -40,6 +40,7 @@ io.on("connection", socket => {
      if(action.type === 'server/userid'){
        console.log('A new user has joined the chat: ', action.data);
        //Generate url for avatar
+       const randomAvatar = makeNewAvatar();
        const generateAvatar = (randomProperties) => {
          const url = randomProperties.url + randomProperties.randomShape +  action.data + randomProperties.randomTheme + randomProperties.randomColours + randomProperties.size;
          return url;

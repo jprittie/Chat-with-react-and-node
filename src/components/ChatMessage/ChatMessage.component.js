@@ -4,10 +4,8 @@ import './ChatMessage.css';
 
 const ChatMessage = ({message}) => (
   <div className="row valign-wrapper">
-    <span className="">
-      <img src={message.avatar} className="avatar"/>
-      <span className="valign">{message.userId}</span>
-    </span>
+    <img src={message.avatar} className="avatar"/>
+    <span className="valign userId">{message.userId}</span>
     <span className="valign">{message.message}</span>
   </div>
 );

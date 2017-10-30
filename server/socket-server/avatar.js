@@ -13,21 +13,26 @@ const numcolours = ['numcolors=2', 'numcolors=3', 'numcolors=4' ]
 const size = 'size=220&fmt=svg'
 
 //Reusable function that can operate on any array passed to it
-var pickRandomProperty = (propertyArray) => {
-  var randomValue = Math.floor(Math.random() * propertyArray.length);
-   return propertyArray[randomValue];
+function makeNewAvatar() {
+  var pickRandomProperty = (propertyArray) => {
+    var randomValue;
+    randomValue = Math.floor(Math.random() * propertyArray.length);
+    console.log("randomValue is " + randomValue);
+     return propertyArray[randomValue];
+  }
+
+  var randomShape = pickRandomProperty(shape);
+  var randomTheme = pickRandomProperty(theme);
+  var randomColours = pickRandomProperty(numcolours);
+
+  var randomAvatar = {
+    url,
+    randomShape,
+    randomTheme,
+    randomColours,
+    size
+  }
+  return randomAvatar
 }
 
-var randomShape = pickRandomProperty(shape);
-var randomTheme = pickRandomProperty(theme);
-var randomColours = pickRandomProperty(numcolours);
-
-var randomAvatar = {
-  url,
-  randomShape,
-  randomTheme,
-  randomColours,
-  size
-}
-
-module.exports = randomAvatar;
+module.exports = makeNewAvatar;

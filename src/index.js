@@ -37,7 +37,7 @@ store.subscribe(()=>{
 //it will be added to an array of current users
 store.dispatch({type: CREATE_RANDOM_USERID, data: newId});
 //This action will set the client user id separately on state
-store.dispatch({type: SET_MY_USERID, data: newId})
+// store.dispatch({type: SET_MY_USERID, data: newId})
 
 
 ReactDOM.render(

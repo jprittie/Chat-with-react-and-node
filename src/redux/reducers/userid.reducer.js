@@ -3,9 +3,9 @@ import { SET_MY_USERID } from '../actions/userid.actions';
 
 //This reducer is listening for a client-side action
 //If user updates their ID I will put it through this reducer
-export const myUserId = (state = '', action) => {
+export const myUserInfo = (state = {}, action) => {
   switch (action.type) {
-    case SET_MY_USERID:
+    case 'setUserProfileInfo':
       return action.data;
     default:
       return state;

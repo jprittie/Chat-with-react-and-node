@@ -6,7 +6,9 @@ import ChatMessage from '../ChatMessage/ChatMessage.component.js'
 const ChatLog = ({messages}) => (
 
   <div className="chatlog-container">
-    {messages.map((message, index) => <ChatMessage key={index} message={message} />)}
+    <ul>
+      {messages.map((message, index) => <li key={index} ><ChatMessage message={message} /></li>)}
+    </ul>
   </div>
 );
 

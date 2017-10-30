@@ -1,13 +1,14 @@
 import React from "react";
+import './ChatMessage.css';
 
 
 const ChatMessage = ({message}) => (
-  <div className="row">
-    <span className="chip">
-      <img src="//robohash.org/503483?set=set2&bgset=bg2&size=70x70" />
-      <span>{message.userId} wrote:</span>
+  <div className="row valign-wrapper">
+    <span className="">
+      <img src={message.avatar} className="avatar"/>
+      <span className="valign">{message.userId}</span>
     </span>
-    <span>{message.message}</span>
+    <span className="valign">{message.message}</span>
   </div>
 );
 

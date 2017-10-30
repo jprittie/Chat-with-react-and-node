@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import './ChatUsers.css'
 
 const ChatUsers = ({currentUsers}) => {
@@ -15,8 +15,9 @@ const ChatUsers = ({currentUsers}) => {
           currentUsers.map(user => {
 
             return (
-              <li key={ user.socketId }>
-                {user.userId}
+              <li key={ user.socketId } className="valign-wrapper">
+                <img src={user.avatar} className="avatar" />
+                <span className="valign">User {user.userId}</span>
               </li>
             );
           })

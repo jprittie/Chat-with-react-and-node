@@ -1,18 +1,35 @@
-import React from "react";
+import React, { Component } from "react";
 import './ChatLog.css'
 import ChatMessage from '../ChatMessage/ChatMessage.component.js';
-import ChatInputBox from '../ChatInputBox/ChatInputBox.component.js'
+
+import {findDOMNode} from "react-dom";
 
 
-const ChatLog = ({messages}) => (
 
-  <div className="chatlog-container col s6">
-    <ul>
-      {messages.map((message, index) => <li key={index} ><ChatMessage message={message} /></li>)}
-    </ul>
-    <ChatInputBox />
-  </div>
+export default class ChatLog extends Component {
 
-);
+  componentWillUpdate () {
+    const node = findDOMNode(this);
+    this.shouldScrollBottom = node.scrollTop + node.offsetHeight === node.scrollHeight;
+  }
 
-export default ChatLog;
+  componentDidUpdate () {
+    if (this.shouldScrollBottom) {
+      const node = findDOMNode(this);
+      node.scrollTop = node.scrollHeight
+    }
+  }
+
+  render() {
+    const { className, messages } = this.props;
+    return (
+      <div className="chatlog-container col s8 offset-s3">
+        <ul className="collection">
+          {messages.map((message, index) => <li key={index} ><ChatMessage message={message} /></li>)}
+        </ul>
+      </div>
+    )
+  }
+
+
+};

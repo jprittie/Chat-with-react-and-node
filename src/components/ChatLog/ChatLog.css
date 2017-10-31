@@ -2,3 +2,10 @@
   padding-top: 40px !important;
   padding-left: 40px !important;
 }
+
+.collection {
+  /*margin: 0 0 130px 0;*/
+  overflow-y: scroll;
+  border: none;
+  /*height: 80vh;*/
+}

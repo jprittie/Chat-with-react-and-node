@@ -4,36 +4,40 @@ import { connect } from 'react-redux';
 import { inputChange, addMessage } from '../../redux/actions/message.actions';
 
 const ChatInputBox = ({textInput, myUserInfo, onTextInputChange, onEnterMessage}) => (
-  <div className="chat-input teal lighten-3">
-    <div className="container">
-      <div className="row">
 
-        <div className="input-field col s10">
-          <i className="prefix mdi-communication-chat" />
-          <input
-            className="input-field"
-            placeholder="Type a message"
-            value={textInput}
-            onChange={ev => onTextInputChange(ev.target.value)}
-          />
-          <span className="chip left">
-           <img src={myUserInfo.avatar} />
-           <span>User {myUserInfo.userId}</span>
-          </span>
-        </div>
+    <div className="row">
 
-        <div className="input-field col s2">
-          <button
-            className="waves-effect waves-light btn-floating btn-large"
-            onClick={ () => onEnterMessage({textInput, myUserInfo}) }
-          >
-            <i className="mdi-content-send" />
-          </button>
-        </div>
+      <div className="chat-input teal lighten-3 col s10 offset-s3">
 
-    </div>
+
+
+          <div className="input-field valign-wrapper">
+
+            <span className="avatar-group">
+               <img src={myUserInfo.avatar} class="avatar circle" />
+               <span className="">{myUserInfo.userId} </span>
+            </span>
+
+            {/*<i className="prefix mdi-communication-chat" />*/}
+            <input
+              className="input-field valign text-input"
+              placeholder="Type a message"
+              value={textInput}
+              onChange={ev => onTextInputChange(ev.target.value)}
+            />
+            <button
+              className="waves-effect waves-light btn-floating btn-large"
+              onClick={ () => onEnterMessage({textInput, myUserInfo}) }
+            >
+              <i className="mdi-content-send" />
+            </button>
+          </div>
+
+
+      </div>
+
   </div>
-</div>
+
 
 );
 

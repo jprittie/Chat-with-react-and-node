@@ -9,19 +9,17 @@ const ChatInputBox = ({textInput, myUserInfo, onTextInputChange, onEnterMessage}
 
       <div className="chat-input">
 
-
-
           <div className="input-field valign-wrapper">
-
-
 
             <input
               className="valign text-input input-field"
               placeholder="Type a message"
               value={textInput}
+
               onChange={ev => onTextInputChange(ev.target.value)}
             />
             <button
+              disabled={!textInput}
               className="waves-effect waves-light btn-floating btn-large"
               onClick={ () => onEnterMessage({textInput, myUserInfo}) }
             >

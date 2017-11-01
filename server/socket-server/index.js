@@ -70,7 +70,8 @@ io.on("connection", socket => {
        const newMessage = {
          message: action.data.textInput,
          userId: action.data.myUserInfo.userId,
-         avatar: action.data.myUserInfo.avatar
+         avatar: action.data.myUserInfo.avatar,
+         leftalign: true
        }
        messages = messages.concat(newMessage);
        io.sockets.emit('action', {type:'messages', data: messages});

@@ -19,26 +19,27 @@ const Chat = ({messages, currentUsers, myUserInfo}) => {
             <ChatHeader myUserInfo={myUserInfo} />
             <ul className="collection">
               <ChatLog messages={messages} >
-                {messages.map((message, index) => {
+                {messages.map( (message, index) => {
 
                   return (
                     <div>
-                      {(index === 0 || message.userId !== messages[index - 1].userId) ?
-                        <li key={index} className="left-message" >
-                          <ChatMessage message={message}/>
-                        </li>
+                      {( (index === 0) ? message.leftalign==true
                         :
-                        <li key={index} className="right-message" >
+                        ( (index > 0 && message.userId==messages[index -        1].userId) ?
+                           message.leftalign==messages[index-1].leftalign
+                           :
+                           message.leftalign==!messages[index-1].leftalign
+                        )
+                      ) && (
+                        <li key={index} >
                           <ChatMessage message={message}/>
                         </li>
-                      }
+                      )}
                     </div>
-                  )
-
-                }
-
-
+                   )  
+                  }
               )}
+
               </ChatLog>
             </ul>
             <ChatInputBox />

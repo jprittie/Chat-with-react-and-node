@@ -21,13 +21,11 @@ export default class ChatLog extends Component {
   }
 
   render() {
-    const { className, messages } = this.props;
     return (
-      <div className="chatlog-container col s8 offset-s3">
-        <ul className="collection">
-          {messages.map((message, index) => <li key={index} ><ChatMessage message={message} /></li>)}
-        </ul>
+      <div>
+        {this.props.children}
       </div>
+
     )
   }
 

@@ -20,25 +20,14 @@ const Chat = ({messages, currentUsers, myUserInfo}) => {
             <ul className="collection">
               <ChatLog messages={messages} >
                 {messages.map( (message, index) => {
-
                   return (
                     <div>
-                      {( (index === 0) ? message.leftalign==true
-                        :
-                        ( (index > 0 && message.userId==messages[index -        1].userId) ?
-                           message.leftalign==messages[index-1].leftalign
-                           :
-                           message.leftalign==!messages[index-1].leftalign
-                        )
-                      ) && (
-                        <li key={index} >
-                          <ChatMessage message={message}/>
-                        </li>
-                      )}
+                      <li key={index} >
+                        <ChatMessage message={message}/>
+                      </li>
                     </div>
-                   )  
-                  }
-              )}
+                  )
+                })}
 
               </ChatLog>
             </ul>

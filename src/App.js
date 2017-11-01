@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from 'react-redux';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Chat from "./components/Chat/Chat.component.js";
 import "./App.css";
 

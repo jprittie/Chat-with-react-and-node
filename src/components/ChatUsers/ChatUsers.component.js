@@ -1,10 +1,10 @@
- import React from 'react';
+import React from 'react';
 import './ChatUsers.css'
 
 const ChatUsers = ({currentUsers}) => {
   return (
 
-      <div className="chat-users teal col s3">
+      <div className="chat-users teal">
         <div className="chat-users-number valign-wrapper">
           <i className="mdi-social-people"></i>
           <span className="valign user-number">{ currentUsers.length } online</span>
@@ -15,7 +15,7 @@ const ChatUsers = ({currentUsers}) => {
           currentUsers.map(user => {
 
             return (
-              <li key={ user.socketId } className="valign-wrapper chat-user">
+              <li key={ user.socketId } className="valign-wrapper chat-user card teal">
                 <img src={user.avatar} className="avatar" />
                 <span className="valign">User {user.userId}</span>
               </li>

@@ -1,0 +1,25 @@
+.chat-header {
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  padding-left: 80px;
+}
+
+.user-avatar-group {
+  position: fixed;
+  top: 20px;
+  right: 100px;
+
+}
+
+.user-id {
+
+}
+
+.user-avatar {
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+}

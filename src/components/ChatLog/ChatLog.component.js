@@ -22,7 +22,7 @@ export default class ChatLog extends Component {
 
   render() {
     return (
-      <div>
+      <div className="">
         {this.props.children}
       </div>
 

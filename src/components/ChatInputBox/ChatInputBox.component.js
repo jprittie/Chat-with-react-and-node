@@ -7,20 +7,16 @@ const ChatInputBox = ({textInput, myUserInfo, onTextInputChange, onEnterMessage}
 
     <div className="row">
 
-      <div className="chat-input teal lighten-3 col s10 offset-s3">
+      <div className="chat-input teal lighten-5">
 
 
 
           <div className="input-field valign-wrapper">
 
-            <span className="avatar-group">
-               <img src={myUserInfo.avatar} class="avatar circle" />
-               <span className="">{myUserInfo.userId} </span>
-            </span>
 
-            {/*<i className="prefix mdi-communication-chat" />*/}
+              
             <input
-              className="input-field valign text-input"
+              className="valign text-input input-field"
               placeholder="Type a message"
               value={textInput}
               onChange={ev => onTextInputChange(ev.target.value)}

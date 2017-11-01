@@ -5,30 +5,19 @@ import Chat from "./components/Chat/Chat.component.js";
 import "./App.css";
 
 
-const App = ({messages, currentUsers, myUserId}) => (
-  <div className="App">
-
-    {/*}
-    <header className="App-header teal">
-      <h1 className="App-title">Welcome to the Chatroom</h1>
-      <h3>Your user ID is {myUserId}</h3>
-    </header>
-    */}
-    <Chat messages={messages} currentUsers={currentUsers} />
-
+const App = ({messages, currentUsers, myUserInfo}) => (
+  <div>
+    <Chat messages={messages} currentUsers={currentUsers} myUserInfo={myUserInfo} />
   </div>
 )
 
 
 const mapStateToProps = (state) => ({
   messages: state.messages,
-  myUserId: state.myUserId,
+  myUserInfo: state.myUserInfo,
   currentUsers: state.currentUsers
 })
 
-const actions = {
-  // onTextInputChange: inputChange,
-  // onEnterMessage: addMessage,
-}
+const actions = {}
 
 export default connect(mapStateToProps, actions)(App);

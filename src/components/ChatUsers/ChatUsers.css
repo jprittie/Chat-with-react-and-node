@@ -10,25 +10,28 @@ ul {
 
 .chat-users {
   height: 100vh;
-  position: fixed;
+  /*position: fixed;
   top: 0;
-  left: 0;
+  left: 0;*/
 }
 
 .chat-user {
   color: white;
   padding: 10px;
-  border-bottom: 1px solid white;
+  margin-left: 10px;
+  margin-right: 10px;
+  /*border-bottom: 1px solid white;*/
 }
 
 .chat-users-number {
   color: white;
   padding: 10px;
-  border-bottom: 1px solid white;
+  /*border-bottom: 1px solid white;*/
 }
 
 .user-number {
   font-family: 'Roboto', sans-serif;
+  margin-left: 8px;
   /*font-size: 1.4em;*/
 }
 .chat-users-number i{

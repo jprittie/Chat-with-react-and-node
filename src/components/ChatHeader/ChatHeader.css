@@ -9,8 +9,8 @@
 
 .user-avatar-group {
   position: fixed;
-  top: 20px;
-  right: 100px;
+  top: 16px;
+  right: 122px;
 
 }
 
@@ -20,6 +20,12 @@
 
 .user-avatar {
   margin-left: 20px;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
 }
+
+/*.user-avatar img {
+  width: 45px;
+  height: 45px;
+  margin: auto;
+}*/

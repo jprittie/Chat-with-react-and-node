@@ -7,14 +7,14 @@ const ChatInputBox = ({textInput, myUserInfo, onTextInputChange, onEnterMessage}
 
     <div className="row">
 
-      <div className="chat-input teal lighten-5">
+      <div className="chat-input">
 
 
 
           <div className="input-field valign-wrapper">
 
 
-              
+
             <input
               className="valign text-input input-field"
               placeholder="Type a message"

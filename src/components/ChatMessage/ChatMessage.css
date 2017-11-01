@@ -1,6 +1,11 @@
 .chat-message {
-  border-bottom: 1px solid grey;
-  padding: 10px 10px 20px 10px;
+  /*border-bottom: 1px solid grey;*/
+  width: 90%;
+}
+
+.message-card {
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .avatar {

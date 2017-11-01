@@ -1,5 +1,6 @@
 .chat-input {
   color: white;
+  background-color: white;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -14,6 +15,10 @@
 
 .text-input {
   width: 60% !important;
+}
+
+input {
+  color: darkgrey;
 }
 
 button {

@@ -7,25 +7,47 @@ import ChatInputBox from '../ChatInputBox/ChatInputBox.component.js'
 import './Chat.component.css'
 
 
-const Chat = ({messages, currentUsers, myUserInfo}) => (
-  <div>
-    <div className="row">
-      <div className="chat-users-spacing three columns">
-        <ChatUsers currentUsers={currentUsers} />
-      </div>
-      <div className="chatlog-container nine columns">
-        <ChatHeader myUserInfo={myUserInfo} />
-        <ul className="collection">
-          <ChatLog messages={messages} >
-            {messages.map((message, index) => <li key={index} ><ChatMessage message={message} /></li>)}
-          </ChatLog>
-        </ul>
-        <ChatInputBox />
-      </div>
-    </div>
+const Chat = ({messages, currentUsers, myUserInfo}) => {
 
-  </div>
-);
+    return (
+      <div>
+        <div className="row teal lighten-5">
+          <div className="chat-users-spacing three columns">
+            <ChatUsers currentUsers={currentUsers} />
+          </div>
+          <div className="chatlog-container nine columns">
+            <ChatHeader myUserInfo={myUserInfo} />
+            <ul className="collection">
+              <ChatLog messages={messages} >
+                {messages.map((message, index) => {
+
+                  return (
+                    <div>
+                      {(index === 0 || message.userId !== messages[index - 1].userId) ?
+                        <li key={index} className="left-message" >
+                          <ChatMessage message={message}/>
+                        </li>
+                        :
+                        <li key={index} className="right-message" >
+                          <ChatMessage message={message}/>
+                        </li>
+                      }
+                    </div>
+                  )
+
+                }
+
+
+              )}
+              </ChatLog>
+            </ul>
+            <ChatInputBox />
+          </div>
+        </div>
+
+      </div>
+    )
+};
 
 
 export default Chat;

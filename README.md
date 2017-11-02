@@ -5,8 +5,9 @@
 This project allows users to automatically join a chat by visiting `localhost:3000` in a browser. A random unique name and avatar are assigned to the user upon entering the chat, and the user details are added to a list of users currently online. The user's name and avatar are displayed next to their messages in the chat log. When a user exits the chat, their user details are removed from the list of users currently online.
 
 ### To build this project:
-* Run git clone https://github.com/jprittie/Chat-with-react-and-node.git.
-* In one command-line tab, navigate to the project root and enter `cd server/socket-server` to navigate to the server side of the app.
+* From the command line, run `git clone https://github.com/jprittie/Chat-with-react-and-node.git`
+* Enter `cd Chat-with-react-and-node` to navigate to the project root.
+* Enter `cd server/socket-server` to navigate to the server side of the app.
 * Run `npm install` to install the dependencies.
 * Run `node index.js` to start the server.
 * In a second command-line tab, enter `cd ../..` to navigate back to the project root.

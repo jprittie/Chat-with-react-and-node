@@ -70,7 +70,7 @@ io.on("connection", socket => {
        //Dispatch updated chatlog history to all clients
        io.sockets.emit('action', {type:'messages', data: messages});
        //Send action to clear textInput on client that sent message
-       socket.emit('action', {type: 'clearInput', payload: ''});
+       socket.emit('action', {type: 'clearInput', data: ''});
      }
 
    });

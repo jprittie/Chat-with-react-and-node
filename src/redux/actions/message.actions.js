@@ -1,26 +1,14 @@
-export const MESSAGE_ACTIONS = {
-  // user actions
-  INPUT_CHANGE: 'INPUT_CHANGE',
-}
+export const INPUT_CHANGE = 'INPUT_CHANGE'
 export const ADD_MESSAGE = 'server/message'
 
+//This action is fired when the text input changes. It goes to the reducers on the client side.
 export const inputChange = value => ({
-  type: MESSAGE_ACTIONS.INPUT_CHANGE,
-  payload: value,
+  type: INPUT_CHANGE,
+  data: value,
 });
 
-
+//This action is dipatched to the server when the user enters a new message. It sends the message, user ID and user avatar URL.
 export const addMessage = messageAndUserId => ({
   type: ADD_MESSAGE,
   data: messageAndUserId
 });
-
-// export const addMessage = message => ({
-//   type: MESSAGE_ACTIONS.ADD_MESSAGE,
-//   payload: message,
-// });
-
-// export const receiveMessage = message => ({
-//   type: MESSAGE_ACTIONS.RECEIVE_MESSAGE,
-//   payload: message,
-// });

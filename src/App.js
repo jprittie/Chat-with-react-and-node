@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Chat from "./components/Chat/Chat.component.js";
 import "./App.css";
 
+//Connect to state at the App level, then pass props down
 
 const App = ({messages, currentUsers, myUserInfo}) => (
   <div>

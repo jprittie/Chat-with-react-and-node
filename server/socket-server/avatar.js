@@ -10,18 +10,17 @@ const size = 'size=220&fmt=svg'
 
 //Reusable function that can operate on any array passed to it
 function makeNewAvatar() {
-  var pickRandomProperty = (propertyArray) => {
-    var randomValue;
+  const pickRandomProperty = (propertyArray) => {
+    let randomValue;
     randomValue = Math.floor(Math.random() * propertyArray.length);
-    console.log("randomValue is " + randomValue);
      return propertyArray[randomValue];
   }
 
-  var randomShape = pickRandomProperty(shape);
-  var randomTheme = pickRandomProperty(theme);
-  var randomColours = pickRandomProperty(numcolours);
+  let randomShape = pickRandomProperty(shape);
+  let randomTheme = pickRandomProperty(theme);
+  let randomColours = pickRandomProperty(numcolours);
 
-  var randomAvatar = {
+  let randomAvatar = {
     url,
     randomShape,
     randomTheme,

@@ -1,8 +1,8 @@
 ## Chatroom with React and Node
 ### Built with React, Redux, SocketIO, Node, redux-socket
 
-### Project objectives:
-This project allows users to automatically join a chat by visiting `localhost:3000` in a browser. A random unique name and avatar are assigned to the user upon entering the chat, and the user details are added to a list of users currently online. The user's name and avatar are displayed next to their messages in the chat log.
+### Project description:
+This project allows users to automatically join a chat by visiting `localhost:3000` in a browser. A random unique name and avatar are assigned to the user upon entering the chat, and the user details are added to a list of users currently online. The user's name and avatar are displayed next to their messages in the chat log. When a user exits the chat, their user details are removed from the list of users currently online.
 
 ### To build this project:
 * Run git clone https://github.com/jprittie/Chat-with-react-and-node.git.
@@ -22,7 +22,7 @@ This project allows users to automatically join a chat by visiting `localhost:30
 ### Solution:
 * I used Redux to handle state, but realized that it would be helpful to have middleware that could make Redux and SocketIO work together better.
 * For example, initially, when a user typed in a message, I was sending it to a reducer on the client side and also to the server so it could be pushed to all connected clients. This felt clunky. So I researched different packages and decided to use one called `redux-socket.io`.
-* After that, it was easier to reason about interactions between the server and clients. The middleware means I don't have to explicitly write socket events on the client side - instead, I can just dispatch actions that are heard by the server. It also means I can dispatch actions from my node server that are heard by client-side reducers.
+* After that, it was easier to reason about interactions between the server and clients. The middleware means I don't have to explicitly write socket events on the client side. I can just dispatch client-side actions that are heard by the server, and I can dispatch actions from my node server that are heard by client-side reducers.
 * So now, when a user types a chat message, I dispatch it with an action with a `server/` prefix. (The middleware looks for that prefix.) The action is heard by socket.on on the server. I check the type of action, and if it is `server/message`, I add the incoming data to the message history and dispatch an action from the server to all connected clients with the updated message history.
 
 

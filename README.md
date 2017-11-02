@@ -12,12 +12,13 @@ This project allows users to automatically join a chat by visiting `localhost:30
 * Run `node index.js` to start the server.
 * In a second command-line tab, enter `cd ../..` to navigate back to the project root.
 * Run `npm install` to install the client-side dependencies.
-* Run `npm start` to start the webpack server.
+* Run `npm start` to start the webpack server for create-react-app.
+* That should launch a new browser tab connected to `localhost:3000`
 
 ### To use this project:
-* Open a browser tab and go to `localhost:3000`. Your username and avatar will be automatically generated. They appear in the top right-hand corner. You should also see your username and avatar appear in the list of users.
+* When the browser tab launches, your username and avatar will be automatically generated. They appear in the top right-hand corner. You should also see your username and avatar appear in the list of users.
 * Type a message and click the send button. The message should appear in the chatlog.
-* If you want to see what it's like for multiple users to use the chatroom, open more browser tabs and go to `localhost:3000` in each one. Then type a message. It should appear in all tabs.
+* If you want to see what it's like for multiple users to use the chatroom, open more browser tabs and go to `localhost:3000` in each one. Then type a message. It should appear in the chatlog in all tabs.
 * When you close a browser tab, that user should disappear from the users list visible in your other tabs.
 
 ### Solution:

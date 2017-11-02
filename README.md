@@ -1,5 +1,5 @@
 ## Chatroom with React and Node
-### Built with React, Redux, SocketIO, Node, redux-socket
+### Built with React, Redux, SocketIO, Node, redux-socket.io
 
 ### Project description:
 This project allows users to automatically join a chat by visiting `localhost:3000` in a browser. A random unique name and avatar are assigned to the user upon entering the chat, and the user details are added to a list of users currently online. The user's name and avatar are displayed next to their messages in the chat log. When a user exits the chat, their user details are removed from the list of users currently online.

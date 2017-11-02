@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import './ChatLog.css'
-import ChatMessage from '../ChatMessage/ChatMessage.component.js';
 
 import {findDOMNode} from "react-dom";
 

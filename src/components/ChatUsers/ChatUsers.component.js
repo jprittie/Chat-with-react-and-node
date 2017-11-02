@@ -16,7 +16,7 @@ const ChatUsers = ({currentUsers}) => {
 
             return (
               <li key={ user.socketId } className="valign-wrapper chat-user card teal">
-                <img src={user.avatar} className="avatar-image circle" />
+                <img src={user.avatar} className="avatar-image circle" alt={user.userId} />
                 <span className="valign">User {user.userId}</span>
               </li>
             );

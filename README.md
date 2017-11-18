@@ -29,7 +29,7 @@ This project allows users to automatically join a chat by visiting `localhost:30
 
 
 ### Planned improvements:
-* Normally I would write unit tests, but I ran out of time. I will keep working on those.
+* I will add unit tests.
 * Folder structure: I used create-react-app for the front end and put my node server in that folder, but I should have put my client and server folders on the same level. So I'm going to restructure the folders.
 * I would also like to be able to build the project by starting both servers at once, so I will add that.
 * I wanted the chatlog to autoscroll down when a user is at the bottom of the chatlog and a new message comes in. This feature is not working yet, but I plan to keep working on it.
